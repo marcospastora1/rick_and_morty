@@ -8,12 +8,12 @@ class HomeController extends GetxController {
   final statusError = false.obs;
 
   @override
-  void onInit() {
-    super.onInit();
+  void onReady() {
+    super.onReady();
     getRick();
   }
 
-  void getRick() async {
+  Future<void> getRick() async {
     try {
       final url = Uri.parse('https://rickandmortyapi.com/api/character');
       final response = await http.get(url);

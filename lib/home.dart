@@ -19,12 +19,13 @@ class HomePage extends GetView<HomeController> {
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
           ),
-          itemCount: controller.personagens['results'].length,
+          itemCount: controller.personagens['results']?.length ?? 0,
           itemBuilder: (_, index) {
             return GestureDetector(
               onTap: () {},
               child: Image.network(
-                  '${controller.personagens['results'][index]['image']}'),
+                '${controller.personagens['results'][index]['image']}',
+              ),
             );
           },
         ),
